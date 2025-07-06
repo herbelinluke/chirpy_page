@@ -1,12 +1,8 @@
 ---
 layout: page
-title: "Home"
+title: "Robust Visual Foraging Challenge @ NeurIPS 2025"
 permalink: /
 ---
-
-
-
-# Robust Visual Foraging Challenge @ NeurIPS 2025
 
 
 <img
