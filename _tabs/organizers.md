@@ -3,7 +3,8 @@
 icon: fas fa-info-circle
 order: 8
 ---
-
+> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+{: .prompt-tip }
 
 The Robust Visual Foraging Challenge is organized by:
 
