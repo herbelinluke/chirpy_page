@@ -1,5 +1,8 @@
 ---
 layout: default
+panel_includes:
+ - toc
+
 ---
 
 {% include lang.html %}
@@ -34,7 +37,7 @@ layout: default
   {% if page.layout == 'page' or page.collection == 'tabs' %}
     {% assign tab_key = page.title | downcase %}
     {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
-    <h1 class="dynamic-title">
+    <h1 data-toc-skip class="dynamic-title">
       {{ title }}
     </h1>
     <div class="content">
@@ -43,6 +46,20 @@ layout: default
   {% else %}
     {{ content }}
   {% endif %}
-
-  
 </article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Only run if TOC is present
+    var tocWrapper = document.getElementById('toc-wrapper');
+    if (tocWrapper && window.tocbot && document.querySelector('#toc')) {
+      tocbot.init({
+        tocSelector: '#toc',
+        contentSelector: '.content',
+        headingSelector: 'h2, h3, h4',
+        collapseDepth: 6
+      });
+      tocWrapper.classList.remove('invisible');
+    }
+  });
+</script>
